@@ -1,0 +1,198 @@
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #fff;
+    opacity: 1;
+    height: 82px;
+    border-bottom: 1px solid rgba(0,0,0,.05);
+    text-decoration: none;
+}
+
+.navbar { 
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1.5fr auto 1fr;
+    align-items: center;
+    padding: 0 2rem;
+    margin-top: 30px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    grid-column: 1;
+    text-decoration: none;
+}
+
+.brand-logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display:grid;
+  place-items:center;
+  background: #c9232b;
+  color:#fff;
+  font-size:1.4rem;
+  font-weight:700;
+}
+
+.navbar-brand strong { display:block; font-size: 1.05rem; letter-spacing: .08em; }
+
+.navbar-brand strong span { color: #c9232b; }
+
+.navbar-brand small {
+    display:block;
+    font-size:.65rem;
+    color:#70757c;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links { grid-column: 2; justify-self: center; }
+
+.nav-links a { text-decoration: none; color: #333; }
+
+.nav-links a:hover, .nav-links a.active { color:#c9232b; }
+
+.btn-appt {
+    background:#c9232b;
+    border:1px solid #c9232b;
+    color:#fff !important;
+    border-radius:4px;
+    padding:.8rem 1.25rem;
+    font-weight:700;
+    transition:.2s ease;
+}
+
+.btn-appt:hover {
+    background:#a91c23;
+    border-color:#a91c23;
+    color:#fff !important;
+    transform:translateY(-1px);
+}
+
+/* ---------- Global responsive safety ---------- */
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: 90px; }
+
+img, iframe, video { max-width: 100%; }
+
+.nav-toggle { display: none; }
+
+
+/* ---------- Mobile / tablet navigation ---------- */
+
+@media (max-width: 900px) {
+    header { height: 70px; }
+
+    nav { height: 100%; }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        height: 100%;
+        margin-top: 0;
+        padding: 0 1rem;
+    }
+
+    .navbar-brand { min-width: 0; }
+
+    /* hamburger button */
+    .nav-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        flex-shrink: 0;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
+        background: #fff;
+        cursor: pointer;
+    }
+
+    .nav-toggle span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        border-radius: 2px;
+        background: #1d2024;
+        transition: transform .2s ease, opacity .2s ease;
+    }
+
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* dropdown panel */
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        justify-self: stretch;
+        grid-column: auto;
+        max-height: calc(100vh - 70px);
+        max-height: calc(100dvh - 70px);
+        overflow-y: auto;
+        background: #fff;
+        border-bottom: 1px solid rgba(0, 0, 0, .08);
+        box-shadow: 0 18px 30px rgba(28, 31, 36, .1);
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-8px);
+        transition: opacity .2s ease, transform .2s ease, visibility .2s;
+    }
+
+    .nav-links.open { visibility: visible; opacity: 1; transform: none; }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 0;
+        padding: .5rem 1rem 1.25rem;
+    }
+
+    .nav-list li a {
+        display: block;
+        padding: .95rem .25rem;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .nav-list li a.btn-appt {
+        margin-top: 1rem;
+        padding: .9rem 1.25rem;
+        border: 1px solid #c9232b;
+        text-align: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .navbar-brand { gap: 8px; }
+    .navbar-brand strong { font-size: .95rem; letter-spacing: .05em; }
+}
+
+/* keep the desktop nav from crowding just above the breakpoint */
+@media (min-width: 901px) and (max-width: 1100px) {
+    .nav-list { gap: 1.1rem; }
+    .navbar { padding: 0 1.25rem; }
+}

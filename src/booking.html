@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book an Appointment | Kamantigue Dental Clinic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../public/css/header-style.css">
+<link rel="stylesheet" href="../public/css/booking-style.css">
+<link rel="stylesheet" href="../public/css/footer-style.css">
+</head>
+<body>
+
+<!-- Header -->
+<div id="header-placeholder"></div>
+
+<div class="hero">
+  <small>KAMANTIGUE DENTAL CLINIC</small>
+  <h1>Request an Appointment</h1>
+</div>
+
+<main class="card">
+  <a class="back" href="../index.html">&larr; Back to home</a>
+
+  <div id="banner" class="banner" role="status" aria-live="polite"></div>
+
+  <form id="bookingForm" novalidate>
+    <div class="grid">
+
+      <div class="col-3 field">
+        <label class="lbl" for="firstName">First Name<span class="req">*</span></label>
+        <input type="text" id="firstName" name="firstName" placeholder="First Name" autocomplete="given-name" required>
+        <div class="err">Please enter your first name.</div>
+      </div>
+
+      <div class="col-3 field">
+        <label class="lbl" for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" placeholder="Last Name" autocomplete="family-name">
+      </div>
+
+      <div class="col-3 field">
+        <label class="lbl" for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Email Address" autocomplete="email">
+        <div class="err">Please enter a valid email address.</div>
+      </div>
+
+      <div class="col-3 field">
+        <label class="lbl" for="phone">Phone Number<span class="req">*</span></label>
+        <div class="phone">
+          <span class="cc" aria-hidden="true">PH +63</span>
+          <input type="tel" id="phone" name="phone" placeholder="Phone Number" inputmode="tel" autocomplete="tel-national" required>
+        </div>
+        <div class="err">Enter a valid PH mobile number (e.g. 9171234567).</div>
+      </div>
+
+      <div class="col-6 field">
+        <label class="lbl" for="address">Address<span class="req">*</span></label>
+        <input type="text" id="address" name="address" placeholder="Address" autocomplete="street-address" required>
+        <div class="err">Please enter your address.</div>
+      </div>
+
+      <div class="col-2 field">
+        <label class="lbl" for="service">Nature of Appointment</label>
+        <select id="service" name="service">
+          <option value="">- Select your services -</option>
+          <option>Comprehensive Dental Examination</option>
+          <option>Preventive Dentistry</option>
+          <option>Restorative Dentistry</option>
+          <option>Periodontal Procedures</option>
+          <option>Oral Surgery / Minor Oral Surgery</option>
+          <option>Endodontic Procedures</option>
+          <option>Prosthodontic Procedures</option>
+          <option>Pediatric Dentistry</option>
+          <option>Orthodontic/Interceptive Care</option>
+          <option>Cosmetic / Esthetic Dentistry</option>
+          <option>Dental Radiography and Diagnosis</option>
+          <option>Emergency Dental Care</option>
+          <option>Follow-up</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="col-2 field">
+        <label class="lbl" for="branch">Branch Location</label>
+        <select id="branch" name="branch">
+          <option value="">- Select your branch location -</option>
+          <!-- TODO: replace with your real branches -->
+          <option>Imus Branch</option>
+          <option>Tagaytay Branch</option>
+        </select>
+      </div>
+
+      <div class="col-2 field">
+        <label class="lbl" for="when">Preferred Appointment Day<span class="req">*</span></label>
+        <input type="datetime-local" id="when" name="when" required>
+        <div class="err" id="whenErr">Please choose a date and time.</div>
+      </div>
+
+      <div class="col-6 field terms" id="termsWrap">
+        <input type="checkbox" id="terms" name="terms">
+        <div>
+          <label for="terms"><strong>ACCEPT Terms and Conditions</strong></label>
+          <p>
+            Please note that submitting a Dental Appointment Request does not guarantee a booking. 
+            Your appointment will only be confirmed once our helpdesk representative contacts you for verification. 
+            Only confirmed appointments will be accommodated at our clinic. 
+            Thank you!
+          </p>
+          <div class="err">Please accept the Terms and Conditions to continue.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <div class="submit">
+      <button type="submit" class="send" id="sendBtn">Send your request</button>
+      <p class="note">We'll contact you by phone or email to verify and confirm your schedule.</p>
+    </div>
+  </form>
+</main>
+
+<!-- Footer -->
+<div id="footer-placeholder"></div>
+
+<!-- JavaScript Link -->
+<script src="../public/js/script.js"></script>
+<script src="../public/js/booking.js"></script>
+</body>
+</html>

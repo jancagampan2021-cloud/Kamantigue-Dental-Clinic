@@ -1,0 +1,106 @@
+body { display: flex; flex-direction: column; min-height: 100vh; }
+
+h1, h2 { font-family: "Playfair Display", serif; line-height: 1.15; }
+
+p { max-width: 600px; font-size: 1.08rem; margin-bottom: 2rem; line-height: 1.7; color: #70757c; }
+
+/* ---------- Hero ---------- */
+.section-heading {
+    font-family: "DM Sans", sans-serif;
+    background: #faf8f7;
+    padding: 150px 40px 60px;
+}
+
+.hero-section { display: block; max-width: 720px; }
+.hero-section h1 { margin: .7rem 0 1rem; font-size: 2.2rem; }
+.hero-section p { margin-bottom: 0; }
+.title { color: #c9232b; font-size: .75rem; font-weight: 700; letter-spacing: .18em; }
+
+/* ---------- Dentists ---------- */
+.dentists-section {
+    flex: 1;
+    font-family: "DM Sans", sans-serif;
+    background: #fff;
+    padding: 60px 40px;
+}
+
+.dentists-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.dentist-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 1.75rem 1.75rem 1.5rem;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    background: #fff;
+}
+
+.dentist-photo {
+    flex-shrink: 0;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* gradient shows behind the photo while loading or if it's missing */
+    background: linear-gradient(135deg, #a8262d, #e08479);
+}
+
+.dentist-info h2 {
+    font-size: 1.3rem;
+    margin: .2rem 0 .5rem;
+    color: #1a1d21;
+}
+
+.specialty {
+    display: block;
+    color: #a8262d;
+    font-size: .9rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+}
+
+.dentist-info h3 {
+    font-family: "DM Sans", sans-serif;
+    font-size: .85rem;
+    font-weight: 700;
+    color: #1a1d21;
+    margin: 1rem 0 .4rem;
+}
+
+.dentist-info ul {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: #70757c;
+    font-size: .95rem;
+    line-height: 1.8;
+}
+
+.dentist-info p {
+    font-size: .95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ---------- Responsive ---------- */
+
+.dentist-info { min-width: 0; }
+.dentist-info h2, .dentist-info li, .dentist-info p { overflow-wrap: break-word; }
+
+@media (max-width: 900px) {
+    .section-heading { padding: 110px 24px 40px; }
+    .dentists-section { padding: 40px 24px; }
+}
+
+@media (max-width: 640px) {
+    .section-heading { padding: 100px 20px 32px; }
+    .hero-section h1 { font-size: 1.8rem; }
+    .hero-section p, .dentist-info p { font-size: 1rem; }
+    .dentists-section { padding: 32px 20px; }
+    .dentist-card { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.25rem; }
+    .dentist-photo { width: 96px; height: 96px; }
+}

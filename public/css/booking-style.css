@@ -1,0 +1,160 @@
+* { box-sizing:border-box }
+
+body {
+    margin:0;
+    color:#1f2933;
+    background:#f4f6f8;
+    line-height:1.5;
+}
+
+.hero {
+    background:#faf8f7;
+    color:#000000;
+    padding:48px 20px 90px;
+    text-align:center
+}
+
+.hero small { letter-spacing:.14em;font-weight:600;opacity:.8;font-size:.78rem }
+
+.hero h1 { font-family: "Playfair Display", serif; line-height: 1.15; margin-top: 70px }
+
+p { font-size: 1.08rem; margin-bottom: 2rem; line-height: 1.7; color: #70757c; }
+
+.card {
+    font-family: "DM Sans", sans-serif;
+    max-width:1100px;
+    margin:-60px auto 48px;
+    background:#fff;
+    border-radius:14px;
+    padding:40px clamp(20px,5vw,80px) 48px;
+    box-shadow:0 10px 40px rgba(12,27,43,.15);
+}
+
+.back {
+    display:inline-block;
+    margin:0 0 18px;color:#12283d;
+    font-weight:600;
+    text-decoration:none;
+    font-size:.9rem
+}
+
+.back:hover { text-decoration:underline }
+
+.grid { display:grid;gap:22px 20px;grid-template-columns:repeat(6,1fr) }
+
+.col-3 { grid-column:span 3 }
+.col-2 { grid-column:span 2 }
+.col-6 { grid-column:span 6 }
+
+@media ( max-width:860px ) { .col-3,.col-2{grid-column:span 6} }
+
+label.lbl { display:block;font-size:1.02rem;margin-bottom:8px }
+
+.req { color:#e0457b;margin-left:4px }
+
+input[type=text],input[type=email],input[type=tel],input[type=datetime-local],select {
+    width:100%;
+    height:56px;
+    padding:0 20px;
+    font:inherit;
+    font-size:.98rem;
+    color:#1f2933;
+    background:#fff;
+    border:1px solid #d9dee4;
+    border-radius:8px;
+    outline:none;
+    transition:border-color .15s, box-shadow .15s;
+}
+
+select {
+    appearance:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%236b7785' stroke-width='2'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:right 20px center;
+    padding-right:44px
+}
+
+input::placeholder { color:#7b8794 }
+
+input:focus,select:focus { border-color:#12283d;box-shadow:0 0 0 3px rgba(18,40,61,.12) }
+
+.invalid input,.invalid select { border-color:#c0392b }
+
+.err { display:none;color:#c0392b;font-size:.82rem;margin-top:6px }
+
+.invalid .err { display:block }
+
+.phone {
+    display:flex;
+    border:1px solid #d9dee4;
+    border-radius:8px;
+    overflow:hidden;
+    transition:border-color .15s, box-shadow .15s
+}
+
+.phone:focus-within { border-color:#12283d;box-shadow:0 0 0 3px rgba(18,40,61,.12) }
+
+.invalid .phone { border-color:#c0392b }
+
+.phone .cc {
+    display:flex;
+    align-items:center;
+    gap:6px;
+    padding:0 14px;
+    background:#eef1f4;
+    font-weight:600;
+    font-size:.88rem;
+    white-space:nowrap
+}
+
+.phone input { border:0;border-radius:0;box-shadow:none!important;height:54px }
+
+.terms { display:flex;gap:10px;align-items:flex-start;margin-top:8px }
+
+.terms input { margin-top:6px;width:16px;height:16px;accent-color:#12283d }
+
+.terms strong { font-size:1.02rem }
+
+.terms p { margin:2px 0 0;color:#3b4652;line-height:1.75;font-size:1rem }
+
+.terms.invalid strong { color:#c0392b }
+
+.submit { text-align:center;margin-top:36px }
+
+button.send {
+    background:#c9232b;
+    color:#fff;
+    border:0;
+    border-radius:8px;
+    padding:0 80px;
+    height:72px;
+    font-family: "DM Sans", sans-serif;
+    font-size:1.4rem;
+    font-weight:800;
+    letter-spacing:.05em;
+    cursor:pointer;
+    text-transform:uppercase;
+    transition:background .15s, transform .05s;
+}
+
+button.send:hover { background:#0c1b2b }
+
+button.send:active { transform:translateY(1px) }
+
+button.send:disabled { opacity:.6;cursor:wait }
+
+.note { max-width:620px;margin:14px auto 0;font-size:.85rem;color:#6b7785 }
+
+.banner {
+    display:none;
+    margin:0 0 24px;
+    padding:16px 20px;
+    border-radius:8px;
+    font-weight:500
+}
+
+.banner.ok { display:block;background:#e7f6ee;color:#14633f;border:1px solid #bfe5cf }
+
+.banner.bad{ display:block;background:#fdecea;color:#8c2b21;border:1px solid #f4c3bd }
+
+.hp { position:absolute;left:-9999px;height:0;width:0;opacity:0 }

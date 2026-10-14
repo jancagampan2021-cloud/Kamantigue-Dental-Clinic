@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kamantigue Dental Clinic</title>
+    <link rel="stylesheet" href="../public/css/header-style.css">
+    <link rel="stylesheet" href="../public/css/schedule-style.css">
+    <link rel="stylesheet" href="../public/css/footer-style.css">
+</head>
+<body>
+
+<!-- Header -->
+<div id="header-placeholder"></div>
+
+<!-- Hero -->
+<section class="section-heading">
+    <div class="hero-section">
+        <span class="title">SCHEDULE</span>
+        <h1>Dentist availability</h1>
+        <p>Find a dentist and a time that works for you.</p>
+    </div>
+</section>
+
+<!-- Schedule -->
+<section class="schedule-section">
+    <div class="dentist-filters" id="filters"></div>
+    <div class="cal-grid" id="calGrid"></div>
+</section>
+
+<!-- Booking modal (hidden until a slot is clicked) -->
+<div class="modal-overlay" id="bookModal">
+  <div class="booking-content">
+    <div class="booking-head">
+      <h3>Book appointment</h3>
+      <button type="button" class="btn-close" id="closeModal" aria-label="Close">&times;</button>
+    </div>
+
+    <p id="modalSlotInfo">Selected slot</p>
+
+    <form id="bookingForm">
+      <div class="form-row">
+        <div class="fld"><label>Full name</label><input type="text" placeholder="Juan Dela Cruz" required></div>
+        <div class="fld"><label>Phone</label><input type="tel" placeholder="0917 000 0000" required></div>
+      </div>
+      <div class="form-row">
+        <div class="fld"><label>Email</label><input type="email" placeholder="you@email.com" required></div>
+        <div class="fld">
+          <label>Reason for visit</label>
+          <select>
+            <option>Check-up / cleaning</option>
+            <option>Toothache / pain</option>
+            <option>Cosmetic consult</option>
+            <option>Follow-up</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="fld"><label>Notes (optional)</label><textarea rows="2" placeholder="Anything we should know"></textarea></div>
+      </div>
+      <button type="submit" class="btn-primary">Confirm booking</button>
+    </form>
+  </div>
+</div>
+
+<!-- Footer -->
+<div id="footer-placeholder"></div>
+
+<!-- JavaScript Link -->
+<script src="../public/js/script.js"></script>
+<script src="../public/js/dentists.js"></script>
+<script src="../public/js/schedule.js"></script>
+</body>
+</html>

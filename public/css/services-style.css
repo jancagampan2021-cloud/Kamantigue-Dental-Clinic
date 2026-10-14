@@ -1,0 +1,112 @@
+body { display: flex; flex-direction: column; min-height: 100vh; }
+
+h1, h2 { font-family: "Playfair Display", serif; line-height: 1.15; }
+
+p { max-width: 600px; font-size: 1.08rem; margin-bottom: 2rem; line-height: 1.7; color: #70757c; }
+
+
+/* ---------- Hero ---------- */
+
+.section-heading {
+    font-family: "DM Sans", sans-serif;
+    background: #faf8f7;
+    padding: 150px 40px 60px;
+}
+
+.hero-section { display: block; max-width: 720px; }
+.hero-section h1 { margin: .7rem 0 1rem; font-size: 2.2rem; }
+.hero-section p { margin-bottom: 0; }
+.title { color: #c9232b; font-size: .75rem; font-weight: 700; letter-spacing: .18em; }
+
+
+/* ---------- Services ---------- */
+
+.services-section {
+    flex: 1;
+    font-family: "DM Sans", sans-serif;
+    background: #fff;
+    padding: 60px 40px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.75rem;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.service-num {
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    color: #b5b8bd;
+    margin-bottom: 2rem;
+}
+
+.service-icon {
+    color: #c9232b;
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.service-card h2 {
+    font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+    margin: 0 0 1rem;
+    color: #1a1d21;
+    overflow-wrap: break-word;
+}
+
+.service-card p {
+    font-size: .98rem;
+    line-height: 1.6;
+    margin: 0 0 1.75rem;
+}
+
+/* margin-top:auto pins the button to the bottom so all buttons line up */
+
+.book-btn {
+    margin-top: auto;
+    align-self: flex-start;
+    padding: .8rem 1.4rem;
+    border: 1px solid #c9232b;
+    border-radius: 4px;
+    color: #c9232b;
+    font-size: .9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background .2s, color .2s;
+}
+
+.book-btn:hover { background: #c9232b; color: #fff; }
+
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1000px) {
+    .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 900px) {
+    .section-heading { padding: 110px 24px 40px; }
+    .services-section { padding: 40px 24px; }
+}
+
+@media (max-width: 640px) {
+    .section-heading { padding: 100px 20px 32px; }
+    .hero-section h1 { font-size: 1.8rem; }
+    .hero-section p { font-size: 1rem; }
+    .services-section { padding: 32px 20px; }
+    .service-grid { grid-template-columns: 1fr; }
+    .service-card { padding: 1.5rem 1.25rem; }
+    .service-num { margin-bottom: 1.25rem; }
+    .service-card h2 { font-size: 1.7rem; }
+    .book-btn { align-self: stretch; text-align: center; padding: .9rem 1.4rem; }
+}

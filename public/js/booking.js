@@ -4,7 +4,7 @@ const CONFIG = {
   // Requests will be emailed to you automatically.
   FORM_ENDPOINT: "",                       // e.g. "https://formspree.io/f/xxxxxxxx"
   // Option B (fallback if no endpoint): opens the patient's email app addressed to the clinic.
-  CLINIC_EMAIL: "kamantiguedentalclinic21@gmail.com",
+  CLINIC_EMAIL: "jan.cagampan2021@gmail.com",
   // Clinic hours for the date picker check (24h). Sunday closed = [0]
   OPEN_HOUR: 8, CLOSE_HOUR: 16, CLOSED_DAYS: [0]
 };
